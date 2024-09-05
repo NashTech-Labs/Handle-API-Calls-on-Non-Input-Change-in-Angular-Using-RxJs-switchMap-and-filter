@@ -1,0 +1,26 @@
+<div class="container">
+<mat-card style="width: 50%;">
+  <mat-card-header>
+    <mat-card-title>
+      Welcome to Progressive Search App
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+   <mat-form-field  style="width: 100%;" appearance="outline" floatPlaceholder="always">
+       <input matInput placeholder="Search"
+              [matAutocomplete]="autocompleteTemplateRefId"
+              [formControl]="inputControl"
+             >
+   </mat-form-field>
+   <mat-autocomplete #autocompleteTemplateRefId="matAutocomplete"
+                     [displayWith]="onSelectConvertValueToInputFn">
+       <mat-option *ngFor="let choice of choices" [value]="choice">
+          {{choice}}
+       </mat-option>
+   </mat-autocomplete>
+
+
+  </mat-card-content>
+</mat-card>
+
+</div>
